@@ -1,0 +1,24 @@
+@html.extend("layout", function(model){
+    @html.block("content", function(model){
+        <h1> Books </h1>
+
+<table border='1' cellpadding='10' cellspacing='0'>
+
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Price</th>
+</tr>
+        @for ( let book of model.books) { 
+            <tr>
+                <td>@book.title</td>
+                <td>@book.author</td>
+                <td>@book.price</td>
+
+                <td> <a href="/book/edit/@book.id">Edit </a> </td>
+            </tr>
+        }
+
+</table>
+    })
+})
