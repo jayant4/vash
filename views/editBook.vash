@@ -1,0 +1,12 @@
+@html.extend('layout', function(model){
+    @html.block("content", function(model){
+    <h1>Edit Book</h1>
+    <input type="number" name="@model.formName" id="updatePrice" placeholder="enter price"/>
+
+
+    // @(
+    //      txt = document.getElementById('updatePrice').value
+    // )
+    <a href = "/books/update?title=@model.title&text=txt"> update price </a>
+    })
+})

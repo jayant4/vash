@@ -15,7 +15,7 @@
                 <td>@book.author</td>
                 <td>@book.price</td>
 
-                <td> <a href="/book/edit/@book.id">Edit </a> </td>
+                <td> <a href="/books/edit?title=@book.title">Edit </a> </td>
             </tr>
         }
 
