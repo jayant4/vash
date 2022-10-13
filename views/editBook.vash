@@ -7,6 +7,19 @@
     // @(
     //      txt = document.getElementById('updatePrice').value
     // )
-    <a href = "/books/update?title=@model.title&text=txt"> update price </a>
+    
+
+    <a href = "/books/update?title=@model.title"> update price </a>
+    <button id = "updateButton" name="@model.formName">Click</button>
+    <script>
+    let txt = document.getElementById('updatePrice').value
+    // console.log(txt)
+    // document.getElementById('updateButton').onclick(() {
+    // console.log("btn click")
+
+    // })
+
+
+    </script>
     })
 })

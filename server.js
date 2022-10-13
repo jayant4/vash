@@ -27,17 +27,12 @@ app.get("/books", (request, response) => {
 
 app.get("/books/edit", (request, response) => {
     const title = request.query.title
-    // console.log(title);
-    // updateBook(title,books);
-    // console.log(books);
-    response.render("editBook", { books })
+    response.render("editBook", { title })
 })
 app.get("/books/update", (request, response) => {
     const title = request.query.title
-    console.log(title);
     updateBook(title, books);
-    console.log(books);
-    response.render("editBook", { title })
+    response.render("books", { books })
 })
 
 app.get("/contact", (request, response) => {
