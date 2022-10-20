@@ -4,20 +4,37 @@
     <input type="number" name="@model.formName" id="updatePrice" placeholder="enter price"/>
 
 
-    // @(
-    //      txt = document.getElementById('updatePrice').value
-    // )
+
+    //<a href = "/books/update?title=@model.title&price=555"> update price </a>
     
-
-    <a href = "/books/update?title=@model.title"> update price </a>
-    <button id = "updateButton" name="@model.formName">Click</button>
+    <button id = "updateButton" name="@model.formName" onclick="addBook()">Click</button>
+    
     <script>
-    let txt = document.getElementById('updatePrice').value
-    // console.log(txt)
-    // document.getElementById('updateButton').onclick(() {
-    // console.log("btn click")
 
-    // })
+
+    function addBook(){
+        
+        // get the value from the textbox
+        let price = document.getElementById('updatePrice').value
+        
+        //alert(`/books/update?title=@model.title&price=${price}`);
+        console.log(`/books/update?title=@model.title&price=${price}`)
+
+        // create the xhr object
+        const xhr=new XMLHttpRequest();
+
+        // create the url to be opened
+        xhr.open('GET',`/books/update?title=@model.title&price=${price}`);
+
+        // send the created request
+        xhr.send();
+
+        // after the url is called redirect to the books page
+        window.location.replace("/books");
+   }
+
+
+
 
 
     </script>

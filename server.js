@@ -31,7 +31,9 @@ app.get("/books/edit", (request, response) => {
 })
 app.get("/books/update", (request, response) => {
     const title = request.query.title
-    updateBook(title, books);
+    const price = request.query.price
+
+    updateBook(title, books, price);
     response.render("books", { books })
 })
 
