@@ -2,23 +2,17 @@
     @html.block("content", function(model){
     <h1>Edit Book</h1>
     <input type="number" name="@model.formName" id="updatePrice" placeholder="enter price"/>
-
-
-
-    //<a href = "/books/update?title=@model.title&price=555"> update price </a>
     
     <button id = "updateButton" name="@model.formName" onclick="addBook()">Click</button>
     
+    
     <script>
 
-
     function addBook(){
-        
+
         // get the value from the textbox
         let price = document.getElementById('updatePrice').value
         
-        //alert(`/books/update?title=@model.title&price=${price}`);
-        console.log(`/books/update?title=@model.title&price=${price}`)
 
         // create the xhr object
         const xhr=new XMLHttpRequest();
